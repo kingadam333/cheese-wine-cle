@@ -21,7 +21,7 @@ const PERKS = [
   },
 ];
 
-const PREMIUM_WINES = Array.from({ length: 6 }, (_, i) => ({
+const PREMIUM_WINES = Array.from({ length: 8 }, (_, i) => ({
   id: i + 1,
   name: "Premium Pour",
   detail: "Details coming soon",
@@ -85,7 +85,7 @@ export default function VIPSection() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {PREMIUM_WINES.map(({ id, name, detail }) => (
             <div
               key={id}
