@@ -26,8 +26,8 @@ export default function Hero() {
 
         <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.1] text-cream sm:text-5xl md:text-6xl">
           A Day of{" "}
-          <span className="text-gold-light">Wine</span>,{" "}
-          <span className="text-wine-light">Cheese</span> &amp;{" "}
+          <span className="text-wine-light">Wine</span>,{" "}
+          <span className="text-gold-light">Cheese</span> &amp;{" "}
           <span className="font-script text-5xl font-bold text-chocolate-light text-outline-caramel sm:text-6xl md:text-7xl">
             Chocolate
           </span>

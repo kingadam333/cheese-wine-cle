@@ -14,7 +14,7 @@ const DETAILS = [
   {
     icon: Crown,
     label: "VIP Early Access",
-    value: "7:00 PM – 8:00 PM",
+    value: "Doors at 6:00 PM",
   },
   {
     icon: MapPin,

@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Highlights from "@/components/Highlights";
+import VIPSection from "@/components/VIPSection";
 import Gallery from "@/components/Gallery";
 import EventDetails from "@/components/EventDetails";
 import Footer from "@/components/Footer";
@@ -11,6 +12,7 @@ export default function Home() {
       <OfficialBanner />
       <Hero />
       <Highlights />
+      <VIPSection />
       <Gallery />
       <EventDetails />
       <Footer />
