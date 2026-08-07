@@ -1,9 +1,5 @@
 import { listGalleryImages } from "@/lib/dropbox";
-
-const FALLBACK_IMAGES = Array.from({ length: 12 }, (_, i) => ({
-  src: `/gallery/gallery-${String(i + 1).padStart(2, "0")}.jpg`,
-  alt: "Photo from a past Cheese, Wine & Chocolate Fest",
-}));
+import { getLocalGalleryImages } from "@/lib/local-gallery";
 
 export default async function Gallery() {
   const dropboxImages = await listGalleryImages();
@@ -14,7 +10,7 @@ export default async function Gallery() {
           src: `/api/dropbox-image?path=${encodeURIComponent(img.path)}`,
           alt: img.name,
         }))
-      : FALLBACK_IMAGES;
+      : getLocalGalleryImages();
 
   return (
     <section id="gallery" className="bg-tan/30 px-6 py-20 sm:py-24">
