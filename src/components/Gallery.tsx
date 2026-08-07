@@ -1,16 +1,34 @@
 import { listGalleryImages } from "@/lib/dropbox";
 import { getLocalGalleryImages } from "@/lib/local-gallery";
 
+type GalleryMedia = {
+  src: string;
+  alt: string;
+  type: "image" | "video";
+};
+
+function shuffle<T>(items: T[]): T[] {
+  const arr = [...items];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 export default async function Gallery() {
   const dropboxImages = await listGalleryImages();
 
-  const images =
+  const media: GalleryMedia[] =
     dropboxImages.length > 0
       ? dropboxImages.map((img) => ({
           src: `/api/dropbox-image?path=${encodeURIComponent(img.path)}`,
           alt: img.name,
+          type: "image" as const,
         }))
       : getLocalGalleryImages();
+
+  const shuffled = shuffle(media);
 
   return (
     <section id="gallery" className="bg-tan/30 px-6 py-20 sm:py-24">
@@ -29,19 +47,33 @@ export default async function Gallery() {
         </div>
 
         <div className="mt-12 columns-2 gap-4 sm:columns-3 lg:columns-4">
-          {images.map(({ src, alt }, i) => (
+          {shuffled.map(({ src, alt, type }, i) => (
             <div
               key={src}
               className="group relative mb-4 break-inside-avoid overflow-hidden rounded-xl bg-ink/5"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element -- dimensions vary per source photo (static + Dropbox), masonry relies on natural aspect ratio */}
-              <img
-                src={src}
-                alt={alt}
-                className="w-full transition-transform duration-300 group-hover:scale-105"
-                loading={i < 4 ? "eager" : "lazy"}
-                decoding="async"
-              />
+              {type === "video" ? (
+                <video
+                  src={src}
+                  className="w-full transition-transform duration-300 group-hover:scale-105"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                  aria-label={alt}
+                />
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element -- dimensions vary per source photo (static + Dropbox), masonry relies on natural aspect ratio
+                <img
+                  src={src}
+                  alt={alt}
+                  className="w-full transition-transform duration-300 group-hover:scale-105"
+                  loading={i < 4 ? "eager" : "lazy"}
+                  decoding="async"
+                />
+              )}
               <div className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-300 group-hover:bg-ink/10" />
             </div>
           ))}
