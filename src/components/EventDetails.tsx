@@ -1,6 +1,15 @@
 import { CalendarDays, Clock, Crown, MapPin, Ticket } from "lucide-react";
 
-const DETAILS = [
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent("Gordon Green, 5400 Detroit Ave, Cleveland, OH 44102");
+
+const DETAILS: {
+  icon: typeof CalendarDays;
+  label: string;
+  value: string | string[];
+  href?: string;
+}[] = [
   {
     icon: CalendarDays,
     label: "Date",
@@ -19,7 +28,8 @@ const DETAILS = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Cleveland, Ohio",
+    value: ["Gordon Green", "5400 Detroit Ave", "Cleveland, OH 44102"],
+    href: GOOGLE_MAPS_URL,
   },
 ];
 
@@ -42,20 +52,43 @@ export default function EventDetails() {
         </h2>
 
         <div className="mt-10 grid w-full grid-cols-2 gap-4 lg:grid-cols-4">
-          {DETAILS.map(({ icon: Icon, label, value }) => (
-            <div
-              key={label}
-              className="flex flex-col items-center gap-2 rounded-2xl bg-cream/5 px-4 py-6 text-center ring-1 ring-cream/10"
-            >
-              <Icon className="h-6 w-6 text-gold-light" aria-hidden="true" />
-              <span className="font-sans text-xs font-bold uppercase tracking-[0.15em] text-cream/50">
-                {label}
-              </span>
-              <span className="font-display text-base font-semibold text-cream">
-                {value}
-              </span>
-            </div>
-          ))}
+          {DETAILS.map(({ icon: Icon, label, value, href }) => {
+            const lines = Array.isArray(value) ? value : [value];
+            const content = (
+              <>
+                <Icon className="h-6 w-6 text-gold-light" aria-hidden="true" />
+                <span className="font-sans text-xs font-bold uppercase tracking-[0.15em] text-cream/50">
+                  {label}
+                </span>
+                <span className="font-display text-base font-semibold text-cream">
+                  {lines.map((line, i) => (
+                    <span key={i} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </span>
+              </>
+            );
+
+            const className =
+              "flex flex-col items-center gap-2 rounded-2xl bg-cream/5 px-4 py-6 text-center ring-1 ring-cream/10";
+
+            return href ? (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${className} cursor-pointer transition-colors duration-200 hover:bg-cream/10`}
+              >
+                {content}
+              </a>
+            ) : (
+              <div key={label} className={className}>
+                {content}
+              </div>
+            );
+          })}
         </div>
 
         <a

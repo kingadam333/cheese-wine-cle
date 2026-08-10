@@ -47,10 +47,15 @@ export default function Hero() {
             <Clock className="h-4 w-4 text-gold-light" aria-hidden="true" />
             7:00 PM – 11:00 PM
           </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-ink-light px-4 py-2 font-sans text-sm font-semibold text-cream ring-1 ring-cream/15">
+          <a
+            href="https://www.gordongreenevents.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-ink-light px-4 py-2 font-sans text-sm font-semibold text-cream ring-1 ring-cream/15 transition-colors duration-200 hover:bg-ink-light/70 hover:text-gold-light"
+          >
             <MapPin className="h-4 w-4 text-gold-light" aria-hidden="true" />
-            Cleveland, Ohio
-          </span>
+            Gordon Green Event Center
+          </a>
         </div>
 
         <div className="mt-9 flex flex-col gap-4 sm:flex-row">
