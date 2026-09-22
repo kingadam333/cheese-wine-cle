@@ -50,6 +50,12 @@ const PREMIUM_WINES: PremiumWine[] = [
     location: "Montalcino, Tuscany, Italy",
     image: "/wines/banfi-brunello-di-montalcino.jpg",
   },
+  {
+    name: "Jax Cabernet Sauvignon",
+    varietal: "Cabernet Sauvignon",
+    location: "Calistoga, Napa Valley, California",
+    image: "/wines/jax-cabernet-sauvignon.jpg",
+  },
 ];
 
 export default function VIPSection() {
