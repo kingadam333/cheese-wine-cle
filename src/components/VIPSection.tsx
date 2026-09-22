@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Clock, UtensilsCrossed, Wine as WineIcon, Sparkles } from "lucide-react";
 
 const PERKS = [
@@ -21,11 +22,23 @@ const PERKS = [
   },
 ];
 
-const PREMIUM_WINES = Array.from({ length: 8 }, (_, i) => ({
-  id: i + 1,
-  name: "Premium Pour",
-  detail: "Details coming soon",
-}));
+type PremiumWine = {
+  name: string;
+  varietal: string;
+  location: string;
+  image: string;
+};
+
+const PREMIUM_WINE_SLOTS = 8;
+
+const PREMIUM_WINES: PremiumWine[] = [
+  {
+    name: "Orin Swift Palermo",
+    varietal: "Cabernet Sauvignon",
+    location: "Napa Valley, California",
+    image: "/wines/orin-swift-palermo.jpg",
+  },
+];
 
 export default function VIPSection() {
   return (
@@ -86,20 +99,52 @@ export default function VIPSection() {
         </div>
 
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {PREMIUM_WINES.map(({ id, name, detail }) => (
-            <div
-              key={id}
-              className="flex flex-col items-center gap-2 rounded-xl border border-dashed border-gold/30 bg-cream/5 px-3 py-6 text-center"
-            >
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 text-gold-light">
-                <WineIcon className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span className="font-display text-sm font-semibold text-cream">
-                {name} #{id}
-              </span>
-              <span className="font-sans text-xs text-tan/60">{detail}</span>
-            </div>
-          ))}
+          {Array.from({ length: PREMIUM_WINE_SLOTS }, (_, i) => {
+            const wine = PREMIUM_WINES[i];
+            if (!wine) {
+              return (
+                <div
+                  key={i}
+                  className="flex flex-col items-center gap-2 rounded-xl border border-dashed border-gold/30 bg-cream/5 px-3 py-6 text-center"
+                >
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 text-gold-light">
+                    <WineIcon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <span className="font-display text-sm font-semibold text-cream">
+                    Premium Pour #{i + 1}
+                  </span>
+                  <span className="font-sans text-xs text-tan/60">
+                    Details coming soon
+                  </span>
+                </div>
+              );
+            }
+            return (
+              <div
+                key={i}
+                className="flex flex-col items-center gap-2 rounded-xl border border-gold/40 bg-cream/5 px-3 py-6 text-center"
+              >
+                <div className="relative h-40 w-full">
+                  <Image
+                    src={wine.image}
+                    alt={`${wine.name} label`}
+                    fill
+                    sizes="(min-width: 640px) 25vw, 50vw"
+                    className="object-contain drop-shadow-lg"
+                  />
+                </div>
+                <span className="font-display text-sm font-semibold text-cream">
+                  {wine.name}
+                </span>
+                <span className="font-sans text-xs text-tan/80">
+                  {wine.varietal}
+                </span>
+                <span className="font-sans text-xs text-tan/60">
+                  {wine.location}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
