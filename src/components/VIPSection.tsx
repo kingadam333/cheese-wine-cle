@@ -38,6 +38,18 @@ const PREMIUM_WINES: PremiumWine[] = [
     location: "Napa Valley, California",
     image: "/wines/orin-swift-palermo.jpg",
   },
+  {
+    name: "Orin Swift Machete",
+    varietal: "Petite Sirah Blend",
+    location: "California",
+    image: "/wines/orin-swift-machete.jpg",
+  },
+  {
+    name: "Banfi Brunello di Montalcino",
+    varietal: "Sangiovese",
+    location: "Montalcino, Tuscany, Italy",
+    image: "/wines/banfi-brunello-di-montalcino.jpg",
+  },
 ];
 
 export default function VIPSection() {
@@ -124,13 +136,13 @@ export default function VIPSection() {
                 key={i}
                 className="flex flex-col items-center gap-2 rounded-xl border border-gold/40 bg-cream/5 px-3 py-6 text-center"
               >
-                <div className="relative h-40 w-full">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full ring-2 ring-gold/50 drop-shadow-lg sm:h-28 sm:w-28">
                   <Image
                     src={wine.image}
                     alt={`${wine.name} label`}
                     fill
-                    sizes="(min-width: 640px) 25vw, 50vw"
-                    className="object-contain drop-shadow-lg"
+                    sizes="(min-width: 640px) 112px, 96px"
+                    className="object-cover"
                   />
                 </div>
                 <span className="font-display text-sm font-semibold text-cream">
