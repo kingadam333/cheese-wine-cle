@@ -101,7 +101,7 @@ export default function EventDetails() {
           Get Your Tickets
         </a>
         <p className="mt-4 font-sans text-xs text-cream/40">
-          Tickets on sale soon — check back for pricing &amp; VIP options.
+          Ticket sales are open — grab yours now for pricing &amp; VIP options.
         </p>
       </div>
     </section>
