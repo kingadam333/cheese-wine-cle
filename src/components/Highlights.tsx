@@ -6,14 +6,14 @@ const HIGHLIGHTS = [
   {
     image: "/cards/card-wine.jpg",
     icon: Wine,
-    title: "50+ Wines",
+    title: "40+ Wines",
     description:
       "Sip your way through reds, whites & rosés from top wineries and local favorites.",
   },
   {
     image: "/cards/card-cheese.jpg",
     icon: CheeseIcon,
-    title: "50+ Cheeses",
+    title: "40+ Cheeses",
     description:
       "From sharp cheddars to creamy brie — a cheese board bigger than you can imagine.",
   },

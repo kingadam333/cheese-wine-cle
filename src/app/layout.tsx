@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Cheese, Wine & Chocolate Fest | Cleveland",
   description:
-    "50+ wines, 50+ cheeses, chocolate vendors, pizza & snacks, and live music — all in one night in Cleveland, Ohio. Grab your tickets to the ultimate foodie festival.",
+    "40+ wines, 40+ cheeses, chocolate vendors, pizza & snacks, and live music — all in one night in Cleveland, Ohio. Grab your tickets to the ultimate foodie festival.",
   openGraph: {
     title: "Cheese, Wine & Chocolate Fest | Cleveland",
     description:
-      "50+ wines, 50+ cheeses, chocolate vendors, pizza & snacks, and live music — all in one night in Cleveland, Ohio.",
+      "40+ wines, 40+ cheeses, chocolate vendors, pizza & snacks, and live music — all in one night in Cleveland, Ohio.",
     url: siteUrl,
     siteName: "Cheese, Wine & Chocolate Fest",
     images: [{ url: "/og-image.jpg", width: 1200, height: 675 }],
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cheese, Wine & Chocolate Fest | Cleveland",
     description:
-      "50+ wines, 50+ cheeses, chocolate vendors, pizza & snacks, and live music — all in one night in Cleveland, Ohio.",
+      "40+ wines, 40+ cheeses, chocolate vendors, pizza & snacks, and live music — all in one night in Cleveland, Ohio.",
     images: ["/og-image.jpg"],
   },
 };

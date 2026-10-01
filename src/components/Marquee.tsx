@@ -1,6 +1,6 @@
 const ITEMS = [
-  "50+ WINES",
-  "50+ CHEESES",
+  "40+ WINES",
+  "40+ CHEESES",
   "CHOCOLATE VENDORS",
   "PIZZA & SNACKS",
   "LIVE MUSIC",

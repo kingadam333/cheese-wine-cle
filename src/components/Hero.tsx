@@ -34,7 +34,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-5 max-w-xl font-sans text-base text-tan sm:text-lg">
-          Over 50 wines, 50 cheeses, chocolate vendors, pizza &amp; snacks, and
+          Over 40 wines, 40 cheeses, chocolate vendors, pizza &amp; snacks, and
           live music — all in one unforgettable night in Cleveland.
         </p>
 
