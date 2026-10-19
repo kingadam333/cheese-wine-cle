@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito, Caveat } from "next/font/google";
+import MetaPixel from "@/components/MetaPixel";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -57,6 +58,7 @@ export default function RootLayout({
       className={`${fredoka.variable} ${nunito.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
+        <MetaPixel />
         {children}
       </body>
     </html>
