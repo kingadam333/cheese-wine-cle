@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CalendarDays, Clock, MapPin, Ticket, ChevronDown } from "lucide-react";
 import Marquee from "./Marquee";
 import HeroBackdrop from "./HeroBackdrop";
+import TicketLink from "./TicketLink";
 
 export default function Hero() {
   return (
@@ -64,15 +65,10 @@ export default function Hero() {
         </span>
 
         <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="https://tastecle.com/events/cheese-wine-chocolate-fest-cleveland-2026"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex h-14 cursor-pointer items-center justify-center gap-2 rounded-full bg-gold px-8 font-display text-lg font-semibold text-ink shadow-lg shadow-gold/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-xl hover:shadow-gold/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
-          >
+          <TicketLink className="group inline-flex h-14 cursor-pointer items-center justify-center gap-2 rounded-full bg-gold px-8 font-display text-lg font-semibold text-ink shadow-lg shadow-gold/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-xl hover:shadow-gold/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light">
             <Ticket className="h-5 w-5" aria-hidden="true" />
             Get Tickets
-          </a>
+          </TicketLink>
           <a
             href="#highlights"
             className="inline-flex h-14 cursor-pointer items-center justify-center gap-2 rounded-full border-2 border-cream/30 px-8 font-display text-lg font-semibold text-cream transition-colors duration-200 hover:border-cream/60 hover:bg-cream/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream/60"

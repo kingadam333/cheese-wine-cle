@@ -1,4 +1,5 @@
 import { CalendarDays, Clock, Crown, MapPin, Ticket } from "lucide-react";
+import TicketLink from "./TicketLink";
 
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=" +
@@ -91,15 +92,10 @@ export default function EventDetails() {
           })}
         </div>
 
-        <a
-          href="https://tastecle.com/events/cheese-wine-chocolate-fest-cleveland-2026"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-10 inline-flex h-14 cursor-pointer items-center justify-center gap-2 rounded-full bg-gold px-9 font-display text-lg font-semibold text-ink shadow-lg shadow-gold/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-xl hover:shadow-gold/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
-        >
+        <TicketLink className="mt-10 inline-flex h-14 cursor-pointer items-center justify-center gap-2 rounded-full bg-gold px-9 font-display text-lg font-semibold text-ink shadow-lg shadow-gold/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-xl hover:shadow-gold/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light">
           <Ticket className="h-5 w-5" aria-hidden="true" />
           Get Your Tickets
-        </a>
+        </TicketLink>
         <p className="mt-4 font-sans text-xs text-cream/40">
           Ticket sales are open — grab yours now for pricing &amp; VIP options.
         </p>
