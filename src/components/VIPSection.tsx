@@ -56,6 +56,24 @@ const PREMIUM_WINES: PremiumWine[] = [
     location: "Calistoga, Napa Valley, California",
     image: "/wines/jax-cabernet-sauvignon.jpg",
   },
+  {
+    name: "Torbreck The Struie",
+    varietal: "Shiraz",
+    location: "Barossa Valley, South Australia",
+    image: "/wines/torbreck-the-struie.jpg",
+  },
+  {
+    name: "Catena Alta Malbec",
+    varietal: "Malbec",
+    location: "Mendoza, Argentina",
+    image: "/wines/catena-alta-malbec.jpg",
+  },
+  {
+    name: "Schramsberg Blanc de Blancs",
+    varietal: "Chardonnay (Sparkling)",
+    location: "North Coast, California",
+    image: "/wines/schramsberg-blanc-de-blancs.jpg",
+  },
 ];
 
 export default function VIPSection() {
