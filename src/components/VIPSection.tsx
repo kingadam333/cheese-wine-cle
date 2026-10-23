@@ -128,10 +128,6 @@ export default function VIPSection() {
           <h3 className="mt-2 font-display text-2xl font-semibold text-cream sm:text-3xl">
             Premium Wines Being Poured
           </h3>
-          <p className="mt-2 font-sans text-sm text-tan/70">
-            Our premium wine lineup is still being finalized — check back
-            soon for the full list.
-          </p>
         </div>
 
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
