@@ -45,18 +45,6 @@ export default function OfficialBanner() {
 
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
           <span className="whitespace-nowrap font-sans text-xs font-bold uppercase tracking-[0.25em] text-tan/70">
-            Official Chocolate
-          </span>
-
-          <motion.span
-            className="text-shimmer-gold font-display text-lg leading-none sm:text-xl"
-            animate={{ opacity: [0.85, 1, 0.85] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          >
-            Malley&apos;s Chocolates
-          </motion.span>
-
-          <span className="whitespace-nowrap font-sans text-xs font-bold uppercase tracking-[0.25em] text-tan/70">
             Official Sponsor
           </span>
 
