@@ -6,7 +6,7 @@ const PERKS = [
     icon: Clock,
     title: "1 Hour Early Access",
     description:
-      "VIP doors open at 6:00 PM — a full hour before general admission, so you get first pour.",
+      "VIP doors open at 7:00 PM — a full hour before general admission, so you get first pour.",
   },
   {
     icon: UtensilsCrossed,

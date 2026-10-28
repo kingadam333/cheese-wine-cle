@@ -19,12 +19,12 @@ const DETAILS: {
   {
     icon: Clock,
     label: "General Admission",
-    value: "7:00 PM – 11:00 PM",
+    value: "8:00 PM – 11:00 PM",
   },
   {
     icon: Crown,
     label: "VIP Early Access",
-    value: "Doors at 6:00 PM",
+    value: "Doors at 7:00 PM",
   },
   {
     icon: MapPin,

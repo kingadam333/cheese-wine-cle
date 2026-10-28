@@ -46,7 +46,7 @@ export default function Hero() {
           </span>
           <span className="inline-flex items-center gap-2 rounded-full bg-ink-light px-4 py-2 font-sans text-sm font-semibold text-cream ring-1 ring-cream/15">
             <Clock className="h-4 w-4 text-gold-light" aria-hidden="true" />
-            7:00 PM – 11:00 PM
+            8:00 PM – 11:00 PM
           </span>
           <a
             href="https://www.gordongreenevents.com/"
