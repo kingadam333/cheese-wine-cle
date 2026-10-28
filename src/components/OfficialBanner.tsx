@@ -56,9 +56,20 @@ export default function OfficialBanner() {
             Malley&apos;s Chocolates
           </motion.span>
 
-          <span className="whitespace-nowrap rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 font-sans text-xs font-bold uppercase tracking-widest text-gold-light">
+          <span className="whitespace-nowrap font-sans text-xs font-bold uppercase tracking-[0.25em] text-tan/70">
             Official Sponsor
           </span>
+
+          <motion.a
+            href="https://tastypassport.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-shimmer-gold cursor-pointer font-display text-lg leading-none hover:opacity-80 sm:text-xl"
+            animate={{ opacity: [0.85, 1, 0.85] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          >
+            Tasty Passport
+          </motion.a>
         </div>
 
         <div
